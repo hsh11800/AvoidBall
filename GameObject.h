@@ -3,8 +3,6 @@
 #include <d3d11.h>
 #include <d3dx11.h>
 #include <d3dcompiler.h>
-#include <xnamath.h>
-#include "resource.h"
 #include "Graphics.h"
 #include "VertexWithColor.h"
 #include "ConstantBuffer.h"

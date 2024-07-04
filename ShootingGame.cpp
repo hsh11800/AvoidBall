@@ -138,7 +138,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			gameSimulator->resetGame();
 			bOverMsged = false;
 			break;
-		case IDD_HELP_HOWTOPLAY:
+		case ID_HELP_HOWTOPLAY:
 			MessageBox(hWnd, TEXT("¡ç¡æ¡è¡é : move ball (Blue)\nThe enemy (Red) moves to random direction in black block\nAs time goes by, the enemy increase\nAvoid enemy!"), TEXT("How To Play"), MB_OK);
 			break;
 		}
