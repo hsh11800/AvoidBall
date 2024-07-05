@@ -1,5 +1,5 @@
 #pragma once
-
+#if defined(_DEBUG)
 #ifdef _WIN64
 #define ASSERT(expr,msg) \
 if (!(expr)) \
@@ -14,4 +14,7 @@ if (!(expr)) \
 		int 3\
 	}\
 }
-#endif
+#endif // _WIN64
+#else // _DEBUG
+#define ASSERT(expr,msg) 
+#endif // _DEBUG
