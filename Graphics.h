@@ -13,12 +13,16 @@ public:
 	bool RemoveGameObject(GameObject* gameObject);
 	void Render();
 	RECT GetWindowRect() const;
+
+	Graphics(const Graphics& other) = delete;
+	Graphics& operator=(const Graphics& rhs) = delete;
+
 private:
 	Graphics(HINSTANCE hInst, HWND hWnd);
-	Graphics(const Graphics& other);
+	
 	~Graphics();
 	void cleanupDevice();
-	Graphics& operator=(const Graphics& rhs);
+	
 	
 	void initRender();
 	HRESULT initDevice();

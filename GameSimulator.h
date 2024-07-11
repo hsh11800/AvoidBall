@@ -21,6 +21,8 @@ public:
 	void ChangeGameLevel(const eGameLevel gameLevel);
 	UINT GetObstacleCount() const;
 	
+	GameSimulator(const GameSimulator& other) = delete;
+	GameSimulator& operator=(const GameSimulator rhs) = delete;
 
 	enum
 	{
@@ -34,10 +36,10 @@ public:
 	static const float mapLimitDown;
 private:
 	GameSimulator();
-	GameSimulator(const GameSimulator& other);
+	
 	~GameSimulator();
 	void resetGame();
-	GameSimulator& operator=(const GameSimulator rhs);
+	
 	GameObject** mGameObjects;
 	UINT mGameObjectCount = 0;
 	UserCharactor* mUserCharactor;

@@ -105,26 +105,25 @@ void GameSimulator::Update()
 }
 void GameSimulator::InitGame()
 {
-	GameSimulator* gameSimulator = GameSimulator::GetInstance();
 	Stick* leftEdge = new Stick(XMFLOAT3(-1.05f, 0.0f, 0.5f), XMFLOAT3(0.f, 0.f, 0.f), 0.1f, 2.2f);
 	Stick* rightEdge = new Stick(XMFLOAT3(1.05f, 0.0f, 0.5f), XMFLOAT3(0.f, 0.f, 0.f), 0.1f, 2.2f);
 	Stick* upEdge = new Stick(XMFLOAT3(0.0f, 1.05f, 0.5f), XMFLOAT3(0.f, 0.f, 0.f), 2.2f, 0.1f);
 	Stick* downEdge = new Stick(XMFLOAT3(0.0f, -1.05f, 0.5f), XMFLOAT3(0.f, 0.f, 0.f), 2.2f, 0.1f);
 	
 	Obstacle* obstacle1 = new Obstacle(OBSTACLE_START_LOCATION, XMFLOAT3(1.0f, 0.0f, 0.0f), 0.05f, mGameLevel);
-	gameSimulator->Spawn(static_cast<GameObject*>(obstacle1));
+	Spawn(static_cast<GameObject*>(obstacle1));
 	UserCharactor* userCharactor = new UserCharactor(XMFLOAT3(0.0f, 0.0f, 0.5f), XMFLOAT3(0.0f, 0.0f, 1.0f), 0.05f);
-	gameSimulator->Spawn(static_cast<GameObject*>(userCharactor));
+	Spawn(static_cast<GameObject*>(userCharactor));
 	
-	gameSimulator->Spawn(static_cast<GameObject*>(leftEdge));
-	gameSimulator->Spawn(static_cast<GameObject*>(rightEdge));
-	gameSimulator->Spawn(static_cast<GameObject*>(upEdge));
-	gameSimulator->Spawn(static_cast<GameObject*>(downEdge));
+	Spawn(static_cast<GameObject*>(leftEdge));
+	Spawn(static_cast<GameObject*>(rightEdge));
+	Spawn(static_cast<GameObject*>(upEdge));
+	Spawn(static_cast<GameObject*>(downEdge));
 
 }
 void GameSimulator::resetGame()
 {
-	GameSimulator* gameSimulator = GameSimulator::GetInstance();
+	
 	mGameObjectCount = 1;
 	
 	for (Obstacle** p = mObstacles; p < mObstacles + mObstacleCount; ++p)
@@ -134,7 +133,7 @@ void GameSimulator::resetGame()
 	mObstacleCount = 0;
 	mbGameOver = false;
 	Obstacle* obstacle1 = new Obstacle(OBSTACLE_START_LOCATION, XMFLOAT3(1.0f, 0.0f, 0.0f), 0.05f, mGameLevel);
-	gameSimulator->Spawn(static_cast<GameObject*>(obstacle1));
+	Spawn(static_cast<GameObject*>(obstacle1));
 	mGameTick = 0;
 }
 
